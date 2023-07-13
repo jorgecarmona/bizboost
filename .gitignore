@@ -5,7 +5,6 @@ node_modules/
 dist/
 
 # Ignore editor-specific files
-.vscode/
 .idea/
 
 # Ignore sensitive files
