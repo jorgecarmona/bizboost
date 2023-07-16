@@ -4,6 +4,12 @@
   "semi": true,
   "overrides": [
     {
+      "files": "*.html",
+      "options": {
+        "printWidth": 120
+      }
+    },
+    {
       "files": "*.css",
       "options": {
         "parser": "css"
