@@ -93,12 +93,19 @@ body {
   font-size: var(--base-font);
   color: var(--body-text);
   background: var(--background);
+  margin: 0;
+  padding: 0;
 }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit;
+  margin: 0;
+}
+
+.blocks {
+  padding: 0 28px;
 }
 
 h1,
@@ -161,11 +168,44 @@ a:hover,
   border-color: goldenrod;
 }
 
+.gradient-button {
+  padding: 15px 34.86px 16.08px 35px;
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--white);
+  border-radius: 30px;
+  font-size: 0.9em;
+  font-weight: var(--bold);
+  line-height: 1.6em;
+  background: linear-gradient(
+    90deg,
+    var(--gradient-start) 0%,
+    var(--gradient-end) 100%
+  );
+}
+
+.gradient-button:hover {
+  background: var(--white);
+  color: var(--background);
+}
+
+.circle {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  position: absolute;
+  left: -11px;
+  top: -2px;
+}
+
+.circle:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
 /*=======================================
     TO BE DELETED
 =========================================*/
 * {
-  margin: 8px;
   border-width: 8px;
   border-style: dashed;
 }
@@ -173,22 +213,22 @@ a:hover,
 * .container,
 * .grid,
 * .footer-content,
-* .copyright-container {
+* .copyright-container,
+.blocks,
+.hero *,
+.hero .inner-container {
   border: none;
 }
 
+html,
 body {
-  padding: 8px;
-  border-color: blue;
+  border: none;
 }
 
-header,
 section,
 footer,
 .navigation nav {
-  margin: 20px 0;
   border: none;
-  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .inner-container {
@@ -225,7 +265,7 @@ main {
     Hero
 =========================================*/
 
-header .container {
+header {
   display: flex;
   gap: 8px;
 }
@@ -243,32 +283,119 @@ header .container {
   justify-content: left;
 }
 
+.logo h2 {
+  font-size: 1.6em;
+  font-weight: var(--bold);
+}
+
+.logo h2:hover {
+  color: var(--primary);
+}
+
 .navigation {
   justify-content: center;
   text-align: center;
 }
 
-.navigation nav:first-child {
+.nav-mobile {
   display: none;
 }
 
-.navigation nav:last-child {
+/* .nav-panel {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 10000;
+  background-color: var(--sub-menu-bg);
+} */
+
+.nav-desktop {
   display: block;
+}
+
+.nav-desktop > ul {
+  gap: 35px;
+}
+
+.nav-desktop li:nth-child(2) {
+  position: relative;
+}
+
+.nav-desktop li:nth-child(2):hover {
+  position: relative;
+}
+
+.nav-desktop li:nth-child(2) ul {
+  display: none;
+}
+
+.nav-desktop li:nth-child(2):hover ul {
+  display: block;
+}
+
+.sub-menu {
+  display: block;
+  background-color: var(--sub-menu-bg);
+  position: absolute;
+  margin: 0;
+  left: 0;
+  top: 40px;
+  z-index: 99;
+}
+
+.sub-menu li {
+  width: 235px;
+  height: 46px;
+  margin: 0;
+  padding: 0 23px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.sub-menu li:hover {
+  padding: 0 30px;
+}
+
+.sub-menu a {
+  font-size: 0.75em;
+  line-height: 3.1em;
 }
 
 .social-links {
   justify-content: end;
 }
 
-.logo h2 {
-  font-size: 1.6em;
-  font-weight: var(--bold);
+.social-links ul {
+  gap: 30px;
+}
+
+.social-links li {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 main {
   max-width: 750px;
   margin: 0 auto;
   text-align: center;
+  padding: 79px 0 70px;
+}
+
+main p {
+  font-size: 1.2em;
+  line-height: 2.1em;
+  margin-top: 24px;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 100%;
+  max-height: 600px;
+  object-fit: cover;
 }
 
 /*=======================================
@@ -360,20 +487,44 @@ footer .footer-content * {
     border-width: 5px;
   }
 
-  .navigation .our-services .container,
+  .our-services .container,
   .big-numbers .container,
   .what-we-do .grid,
   footer .footer-content,
-  .copyright-container {
+  .copyright-container,
+  .nav-mobile {
     display: block;
   }
 
-  .navigation nav:first-child {
-    display: block;
+  h1 {
+    font-size: 2.1em;
   }
 
-  .navigation nav:last-child {
+  .logo h2 {
+    font-size: 1.2em;
+  }
+
+  .nav-mobile img {
+    width: 18px;
+    position: relative;
+  }
+
+  .navigation {
+    justify-content: right;
+    margin-right: 10px;
+  }
+
+  .nav-desktop {
     display: none;
+  }
+
+  main {
+    padding: 42px 0;
+  }
+
+  main p {
+    font-size: 1.1em;
+    line-height: 1.925em;
   }
 
   .copyright-container * {
