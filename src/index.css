@@ -91,6 +91,7 @@ body {
   box-sizing: border-box;
   font-family: var(--primary-font);
   font-size: var(--base-font);
+  line-height: 1.75em;
   color: var(--body-text);
   background: var(--background);
   margin: 0;
@@ -123,7 +124,21 @@ h6 {
 h1 {
   font-size: 4em;
   line-height: 1.5em;
+  font-weight: var(--medium);
 }
+
+h2 {
+  font-size: 2.45em;
+  line-height: 1.29em;
+  font-weight: var(--medium);
+}
+
+h3 {
+  font-size: 2.27em;
+  line-height: 2.94em;
+  font-weight: var(--medium);
+}
+
 h4,
 h5 {
   font-weight: var(--bold);
@@ -140,7 +155,7 @@ ul {
 }
 
 a {
-  color: var(--body-Text);
+  color: var(--body-text);
   text-decoration: none;
   font-size: 0.9em;
   font-style: normal;
@@ -214,9 +229,11 @@ a:hover,
 * .grid,
 * .footer-content,
 * .copyright-container,
+* .our-services *,
 .blocks,
 .hero *,
-.hero .inner-container {
+.hero .inner-container,
+.our-services .inner-container {
   border: none;
 }
 
@@ -232,7 +249,6 @@ footer,
 }
 
 .inner-container {
-  padding: 8px;
   border-width: 8px;
   border-style: dashed;
   border-color: goldenrod;
@@ -257,8 +273,8 @@ main {
   border-color: gray;
 }
 
-.our-services .container * {
-  border-color: greem;
+.our-services .container > * {
+  border-color: green;
 }
 
 /*=======================================
@@ -402,14 +418,48 @@ main p {
 /*=======================================
     Our Services
 =========================================*/
-.our-services .container {
-  display: flex;
-  gap: 8px;
+.our-services {
+  padding: 131px 0;
 }
 
-.our-services .container * {
+.our-services .container {
+  display: flex;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.our-services .container > * {
   flex: 1;
-  border-color: green;
+}
+
+.our-services .container img {
+  width: 100%;
+}
+
+.our-services aside {
+  padding: 0 100px;
+}
+
+.our-services aside h6 {
+  font-size: 0.8em;
+  font-weight: var(--semi-bold);
+  line-height: 1.44em;
+  color: var(--body-text);
+  text-transform: uppercase;
+}
+
+.our-services aside h2 {
+  color: var(--white);
+  text-transform: capitalize;
+  margin-top: 14px;
+}
+
+.our-services aside p {
+  margin: 20px 0;
+}
+
+.big-numbers {
+  margin-top: 131px;
 }
 
 .big-numbers .container {
@@ -417,11 +467,14 @@ main p {
   justify-content: center;
 }
 
-.big-numbers .container .number-box {
+.big-numbers .number-box {
   border-color: green;
   flex: 1;
-  display: flex;
-  justify-content: center;
+  text-align: center;
+}
+
+.number-box h2 {
+  font-weight: var(--bold);
 }
 
 /*=======================================
@@ -480,6 +533,7 @@ footer .footer-content * {
     Mobile small devices
 ==========================*/
 @media (max-width: 479px) {
+  /* START: remove when finished */
   * {
     border-width: 5px;
   }
@@ -488,11 +542,15 @@ footer .footer-content * {
     border-width: 5px;
   }
 
+  /* END: remove when finished */
+
   .our-services .container,
-  .big-numbers .container,
   .what-we-do .grid,
   footer .footer-content,
-  .copyright-container,
+  .copyright-container {
+    flex-direction: column;
+  }
+
   .nav-mobile {
     display: block;
   }
@@ -526,6 +584,34 @@ footer .footer-content * {
   main p {
     font-size: 1.1em;
     line-height: 1.925em;
+  }
+
+  .our-services {
+    padding: 42px 0;
+  }
+
+  .our-services .image-holder {
+    margin-bottom: 28px;
+  }
+
+  .our-services aside {
+    padding: 0;
+  }
+
+  .our-services aside h2 {
+    font-size: 1.6em;
+  }
+
+  .our-services aside p {
+    font-size: 0.9em;
+  }
+
+  .big-numbers {
+    margin-top: 42px;
+  }
+
+  .number-box h2 {
+    font-size: 1.6em;
   }
 
   .copyright-container * {
