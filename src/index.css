@@ -20,14 +20,35 @@
   Breakpoints.............................Global responsive breakpoints definitions
 */
 
-/*=======================================
+:root {
+  /*=======================================
     COLORS
 =========================================*/
 
-/*=======================================
+  /*=========================
+    Brand Colors
+==========================*/
+  --primary: #2292b1;
+  --gradient-start: #1b3385;
+  --gradient-end: #25c5c9;
+
+  /*=========================
+    Neutral Colors
+==========================*/
+  --background: #0a0c11;
+  --body-text: #abadb3;
+  --border-color: #323438;
+  --sub-menu-bg: #222;
+  --white: #fff;
+
+  /*=========================
+    Utility Colors
+==========================*/
+
+  /*=======================================
     TYPOGRAPHY
 =========================================*/
-/* 
+  /* 
   1. The Poppins font. This is the main font.
   https://fonts.googleapis.com/css?family=Poppins
 
@@ -35,6 +56,328 @@
   https://fonts.googleapis.com/css?family=Poppins
 */
 
+  /*=========================
+    Font famillies
+==========================*/
+  --base-font: 20px;
+  --primary-font: "Poppins";
+
+  /*=========================
+    Font weights
+==========================*/
+  --thin: 100;
+  --extra-light: 200;
+  --light: 300;
+  --normal: 400;
+  --medium: 500;
+  --semi-bold: 600;
+  --bold: 700;
+  --extra-bold: 800;
+  --heavy: 900;
+
+  /*=========================
+    Sizes
+==========================*/
+
+  /*=========================
+    Heading Sizes
+==========================*/
+}
+
+/*=======================================
+    RESETS
+=========================================*/
+body {
+  box-sizing: border-box;
+  font-family: var(--primary-font);
+  font-size: var(--base-font);
+  color: var(--body-text);
+  background: var(--background);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--primary-font);
+  font-weight: var(--medium);
+  color: var(--white);
+  margin: 0;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1.5em;
+}
+h4,
+h5 {
+  font-weight: var(--bold);
+}
+
+h6 {
+  font-weight: var(--semi-bold);
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+a {
+  color: var(--body-Text);
+  text-decoration: none;
+  font-size: 0.9em;
+  font-style: normal;
+  font-weight: var(--normal);
+  line-height: 2.4em;
+  text-transform: capitalize;
+}
+
+a:hover,
+.logo:hover {
+  color: var(--primary);
+}
+
+.selected {
+  color: var(--primary);
+}
+
+.lowlight {
+  opacity: 0.5;
+}
+
+.inner-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  border-color: goldenrod;
+}
+
+/*=======================================
+    TO BE DELETED
+=========================================*/
+* {
+  margin: 8px;
+  border-width: 8px;
+  border-style: dashed;
+}
+
+* .container,
+* .grid,
+* .footer-content,
+* .copyright-container {
+  border: none;
+}
+
+body {
+  padding: 8px;
+  border-color: blue;
+}
+
+header,
+section,
+footer,
+.navigation nav {
+  margin: 20px 0;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.inner-container {
+  padding: 8px;
+  border-width: 8px;
+  border-style: dashed;
+  border-color: goldenrod;
+}
+
+.hero {
+  border-color: gray;
+}
+
+.logo,
+.navigation,
+.social-links {
+  border-color: green;
+}
+
+main {
+  border-color: cyan;
+}
+
+.our-services,
+.big-numbers {
+  border-color: gray;
+}
+
+.our-services .container * {
+  border-color: greem;
+}
+
+/*=======================================
+    Hero
+=========================================*/
+
+header .container {
+  display: flex;
+  gap: 8px;
+}
+
+.logo,
+.navigation,
+.social-links {
+  flex: 1;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  justify-content: left;
+}
+
+.navigation {
+  justify-content: center;
+  text-align: center;
+}
+
+.navigation nav:first-child {
+  display: none;
+}
+
+.navigation nav:last-child {
+  display: block;
+}
+
+.social-links {
+  justify-content: end;
+}
+
+.logo h2 {
+  font-size: 1.6em;
+  font-weight: var(--bold);
+}
+
+main {
+  max-width: 750px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*=======================================
+    Our Services
+=========================================*/
+.our-services .container {
+  display: flex;
+  gap: 8px;
+}
+
+.our-services .container * {
+  flex: 1;
+  border-color: green;
+}
+
+.big-numbers .container {
+  display: flex;
+  justify-content: center;
+}
+
+.big-numbers .container .number-box {
+  border-color: green;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/*=======================================
+    What We Do
+=========================================*/
+.what-we-do {
+  border-color: gray;
+}
+
+.what-we-do .grid {
+  display: flex;
+  gap: 8px;
+}
+
+.what-we-do .grid * {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/*=======================================
+    Promotional Content
+=========================================*/
+.promotional .container {
+  text-align: center;
+}
+
+/*=======================================
+    Footer
+=========================================*/
+footer .footer-content {
+  display: flex;
+}
+
+footer .footer-content * {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.copyright-container {
+  display: flex;
+  align-items: center;
+}
+
+.copyright-container * {
+  flex: 1;
+  display: flex;
+}
+
 /*=======================================
     BREAKPOINTS
 =========================================*/
+
+/*=========================
+    Mobile small devices
+==========================*/
+@media (max-width: 479px) {
+  * {
+    border-width: 5px;
+  }
+
+  .inner-container {
+    border-width: 5px;
+  }
+
+  .navigation .our-services .container,
+  .big-numbers .container,
+  .what-we-do .grid,
+  footer .footer-content,
+  .copyright-container {
+    display: block;
+  }
+
+  .navigation nav:first-child {
+    display: block;
+  }
+
+  .navigation nav:last-child {
+    display: none;
+  }
+
+  .copyright-container * {
+    display: flex;
+    justify-content: center;
+  }
+}
