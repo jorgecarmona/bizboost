@@ -139,6 +139,11 @@ h3 {
   font-weight: var(--medium);
 }
 
+h4 {
+  font-size: 1.2em;
+  line-height: 1.72em;
+}
+
 h4,
 h5 {
   font-weight: var(--bold);
@@ -217,6 +222,20 @@ a:hover,
   background: rgba(255, 255, 255, 0.25);
 }
 
+.subtitle {
+  font-size: 0.8em;
+  font-weight: var(--semi-bold);
+  line-height: 1.44em;
+  color: var(--body-text);
+  text-transform: uppercase;
+}
+
+.section-title {
+  color: var(--white);
+  text-transform: capitalize;
+  margin-top: 14px;
+}
+
 /*=======================================
     TO BE DELETED
 =========================================*/
@@ -233,7 +252,9 @@ a:hover,
 .blocks,
 .hero *,
 .hero .inner-container,
-.our-services .inner-container {
+.our-services .inner-container,
+.what-we-do *,
+.what-we-do .inner-container {
   border: none;
 }
 
@@ -440,20 +461,6 @@ main p {
   padding: 0 100px;
 }
 
-.our-services aside h6 {
-  font-size: 0.8em;
-  font-weight: var(--semi-bold);
-  line-height: 1.44em;
-  color: var(--body-text);
-  text-transform: uppercase;
-}
-
-.our-services aside h2 {
-  color: var(--white);
-  text-transform: capitalize;
-  margin-top: 14px;
-}
-
 .our-services aside p {
   margin: 20px 0;
 }
@@ -484,15 +491,52 @@ main p {
   border-color: gray;
 }
 
+.what-we-do .headings {
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--border-color);
+  padding: 42px;
+}
+
+.box img {
+  width: 100%;
+}
+
+.box h4 {
+  margin: 24px 0;
+}
+
+.box a {
+  font-size: 0.8em;
+  color: var(--body-text);
+  position: relative;
+  margin-top: 36px;
+}
+
+.box a:after {
+  content: "";
+  border-bottom: 2px solid var(--primary);
+  position: absolute;
+  width: 84px;
+  height: 2px;
+  left: 0;
+  bottom: 0;
+  transition: all 0.5s ease;
+}
+
 .what-we-do .grid {
   display: flex;
-  gap: 8px;
+  gap: 1.5em;
+  margin: 77px 0;
 }
 
 .what-we-do .grid * {
   flex: 1;
   display: flex;
-  justify-content: center;
 }
 
 /*=======================================
@@ -532,7 +576,7 @@ footer .footer-content * {
 /*=========================
     Mobile small devices
 ==========================*/
-@media (max-width: 479px) {
+@media all and (max-width: 479px) {
   /* START: remove when finished */
   * {
     border-width: 5px;
@@ -610,8 +654,20 @@ footer .footer-content * {
     margin-top: 42px;
   }
 
-  .number-box h2 {
+  h2 {
     font-size: 1.6em;
+  }
+
+  h4 {
+    font-size: 1.1em;
+  }
+
+  .what-we-do .grid {
+    margin-top: 59px;
+  }
+
+  .box p {
+    font-size: 0.9em;
   }
 
   .copyright-container * {
